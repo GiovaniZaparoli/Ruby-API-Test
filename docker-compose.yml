@@ -1,0 +1,15 @@
+version: '3'
+services:
+  test:
+    tty: true
+    container_name: ruby_api_test
+    build: .
+    command: bash -c "bundler install --quiet && bundle exec cucumber"
+    environment:
+      - "APP_ENV=development"
+    volumes:
+      - ./:/var/www/ruby-api-test
+    ports:
+      - "3000:3000"
+
+
