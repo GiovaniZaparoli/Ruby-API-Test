@@ -8,6 +8,6 @@ end
 
 Então('a API irá o cliente criado e código 201') do
   parsed_response = JSON.parse(@response.body)
-  p parsed_response
+
   expect(@response.code).to eq(201)
 end
